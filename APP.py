@@ -64,7 +64,7 @@ if __name__=="__main__":
                           min_value=500,value=1000,step=500)
     status=col1.selectbox("Select the status",list(status_mapping.keys()))
     facing=col2.selectbox("Select a Facing",list(direction_mapping.keys()))
-    Type=col1.selectbox("Select Property Type",list(property_type_mapping.keys()))
+    Type=st.selectbox("Select Property Type",list(property_type_mapping.keys()))
 
     result=predict(bed,bath,loc,size,status,facing,Type)
     submit_button=st.button("Submit")
