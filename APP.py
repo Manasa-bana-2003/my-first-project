@@ -56,14 +56,14 @@ def predict(bed,bath,loc,size,status,facing,Type):
 if __name__=="__main__":
     st.header("House Price Prediction")
 
-    col1,col2=st.columns([2,1])
+    col1,col2=st.columns([1,1])
     bed=col1.slider("No.of Bedroom",max_value=10,min_value=1,value=2)
-    bath=col1.slider("No.of Bathrooms",max_value=10,min_value=0,value=2)
+    bath=col2.slider("No.of Bathrooms",max_value=10,min_value=0,value=2)
     loc=col1.selectbox("Select a Location",list(location_mapping.keys()))
-    size=col1.number_input("Area",max_value=10000,
+    size=col2.number_input("Area",max_value=10000,
                           min_value=500,value=1000,step=500)
     status=col1.selectbox("Select the status",list(status_mapping.keys()))
-    facing=col1.selectbox("Select a Facing",list(direction_mapping.keys()))
+    facing=col2.selectbox("Select a Facing",list(direction_mapping.keys()))
     Type=col1.selectbox("Select Property Type",list(property_type_mapping.keys()))
 
     result=predict(bed,bath,loc,size,status,facing,Type)
